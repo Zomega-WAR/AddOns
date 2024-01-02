@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Interface.xsd">
+
+  <Assets>
+    <Texture name="PlayEffectsOn_Texture_None" file="Textures\None.tga" />
+    <Texture name="PlayEffectsOn_Texture_Self" file="Textures\Self.tga" />
+    <Texture name="PlayEffectsOn_Texture_Party" file="Textures\Party.tga" />
+    <Texture name="PlayEffectsOn_Texture_Warband" file="Textures\Warband.tga" />
+    <Texture name="PlayEffectsOn_Texture_All" file="Textures\All.tga" />
+
+    <Texture name="PlayEffectsOn_Texture_Error" file="Textures\Error.tga" />
+  </Assets>
+
+  <Windows>
+
+    <DynamicImage name="PlayEffectsOn_Main" movable="true" layer="primary" savesettings="true" handleinput="true" parent="root">
+
+      <Size>
+        <AbsPoint x="32" y="32" />
+      </Size>
+
+      <Anchors>
+        <Anchor point="top" relativePoint="top" relativeTo="Root">
+          <AbsPoint x="0" y="300" />
+        </Anchor>
+      </Anchors>
+
+      <EventHandlers>
+        <EventHandler function="PlayEffectsOn.OnRButtonUp" event="OnRButtonUp" />
+      </EventHandlers>
+  
+    </DynamicImage>
+
+  </Windows>
+
+</Interface>
