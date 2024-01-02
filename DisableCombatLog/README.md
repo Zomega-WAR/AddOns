@@ -1,4 +1,4 @@
-# DisableCombatLog
+# DisableCombatLog v1.0
 
 Performance improving add-on that disables the combat log. This add-on is simply doing the equivalent of this when you login with a character:
 
