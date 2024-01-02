@@ -1,4 +1,4 @@
-# PlayEffectsOn
+# PlayEffectsOn v1.2
 
 ![](screenshot.jpg)
 
