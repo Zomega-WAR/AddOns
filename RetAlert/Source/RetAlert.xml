@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Interface>
+
+  <Assets>
+    <Texture name="RetAlert_Slayer" file="Textures\Slayer.tga" />
+  </Assets>
+
+  <Windows>
+
+    <DynamicImage name="RetAlert_Main" texture="RetAlert_Slayer" movable="false" layer="primary" savesettings="true" handleinput="false" parent="root">
+
+      <Size>
+        <AbsPoint x="256" y="256" />
+      </Size>
+
+      <Anchors>
+        <Anchor point="top" relativePoint="top" relativeTo="Root">
+          <AbsPoint x="0" y="300" />
+        </Anchor>
+      </Anchors>
+
+    </DynamicImage>
+
+  </Windows>
+
+</Interface>
