@@ -133,8 +133,6 @@ function LTT_OnUpdate (time_delta_seconds)
 
   WindowAddAnchor (WINDOW_TARGET.."S", "topleft", "Root", "topleft", (SystemData.screenResolution.x / 2) * scale_xy, (SystemData.screenResolution.y / 2) * scale_xy)
   WindowAddAnchor (WINDOW_TARGET.."M", "topleft", "Root", "topleft", mid_x * scale_xy, mid_y * scale_xy)
-  WindowAddAnchor (WINDOW_TARGET.."E", "topleft", "Root", "topleft", end_x *  scale_xy, end_y *  scale_xy)
-
-  EA_ChatWindow.Print (towstring (angle))
+  WindowAddAnchor (WINDOW_TARGET.."E", "topleft", "Root", "topleft", end_x * scale_xy, end_y * scale_xy)
 
 end
