@@ -2,6 +2,8 @@ local WINDOW_LINE = "LTT_Line"
 local WINDOW_LINE_DI = "LTT_Line_DynamicImage"
 local WINDOW_TEST = "LTT_Test"
 
+local WINDOW_TARGET = "LTT_Target"
+
 local target_object_id = 0
 
 local scroll_pixels_current = 0
@@ -12,6 +14,18 @@ function LTT_OnInitialize ()
 
   CreateWindow (WINDOW_LINE, true)
   CreateWindow (WINDOW_TEST, true)
+
+  CreateWindowFromTemplate (WINDOW_TARGET.."S", WINDOW_TARGET, "Root")
+  CreateWindowFromTemplate (WINDOW_TARGET.."M", WINDOW_TARGET, "Root")
+  CreateWindowFromTemplate (WINDOW_TARGET.."E", WINDOW_TARGET, "Root")
+
+  WindowSetShowing (WINDOW_TARGET.."S", true)
+  WindowSetShowing (WINDOW_TARGET.."M", true)
+  WindowSetShowing (WINDOW_TARGET.."E", true)
+
+  WindowSetTintColor (WINDOW_TARGET.."S", 255, 0, 0)
+  WindowSetTintColor (WINDOW_TARGET.."M", 0, 255, 0)
+  WindowSetTintColor (WINDOW_TARGET.."E", 0, 0, 255)
 
   RegisterEventHandler (SystemData.Events.PLAYER_TARGET_UPDATED, "LTT_OnPlayerTargetUpdated")
 
@@ -40,7 +54,7 @@ function LTT_OnUpdate (time_delta_seconds)
   WindowClearAnchors (WINDOW_TEST)
   WindowAddAnchor (WINDOW_TEST, "topleft", "Root", "topleft", SystemData.screenResolution.x / 2, SystemData.screenResolution.y / 2)
 
-  local anchored_x = WindowGetScreenPosition (WINDOW_TEST)
+  local anchored_x, anchored_y = WindowGetScreenPosition (WINDOW_TEST)
   local scale_xy = (SystemData.screenResolution.x / 2) / anchored_x
 
   -- Early-out if there is no friendly target.
@@ -98,11 +112,29 @@ function LTT_OnUpdate (time_delta_seconds)
   WindowClearAnchors (WINDOW_LINE)
   WindowSetDimensions (WINDOW_LINE_DI, length * scale_xy, 14)
   DynamicImageSetRotation (WINDOW_LINE_DI, angle)
+
   WindowSetAlpha (WINDOW_LINE, 1.0)
+
+  -- Fix the mid point after this calculations to adjust for the rotation. This
+  -- is needed as DynamicImageSetRotation doesn't correctly account for the
+  -- height of the window. Height is 14, so we have to adjust by half (7).
+  local fixed_mid_x = mid_x - (dir_y * 7)
+  local fixed_mid_y = mid_y + (dir_x * 7)
 
   -- Now the rotation is done, move the mid-point of the line window. Needs to
   -- be scaled as WindowAddAnchor also modifies the inputs based on UI scale
   -- which we do not want.
-  WindowAddAnchor (WINDOW_LINE, "topleft", "Root", "topleft", mid_x * scale_xy, mid_y * scale_xy)
+  WindowAddAnchor (WINDOW_LINE, "topleft", "Root", "topleft", fixed_mid_x * scale_xy, fixed_mid_y * scale_xy)
+
+  -- Show the debug windows
+  WindowClearAnchors (WINDOW_TARGET.."S")
+  WindowClearAnchors (WINDOW_TARGET.."M")
+  WindowClearAnchors (WINDOW_TARGET.."E")
+
+  WindowAddAnchor (WINDOW_TARGET.."S", "topleft", "Root", "topleft", (SystemData.screenResolution.x / 2) * scale_xy, (SystemData.screenResolution.y / 2) * scale_xy)
+  WindowAddAnchor (WINDOW_TARGET.."M", "topleft", "Root", "topleft", mid_x * scale_xy, mid_y * scale_xy)
+  WindowAddAnchor (WINDOW_TARGET.."E", "topleft", "Root", "topleft", end_x *  scale_xy, end_y *  scale_xy)
+
+  EA_ChatWindow.Print (towstring (angle))
 
 end

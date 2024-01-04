@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ModuleFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <UiMod name="(DEMO) Line To Target" version="1.0" date="03/01/2024">
+  <UiMod name="(DEMO) Line To Target" version="1.1" date="04/01/2024">
 
     <Author name="Zomega" />
 

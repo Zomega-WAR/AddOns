@@ -8,7 +8,7 @@
         <DynamicImage name="LTT_Line_DynamicImage" texture="LTT_Texture_Line" movable="false" sticky="false" layer="background" handleinput="false" parent="$parent">
           <Anchors>
             <Anchor point="center" relativePoint="center" relativeTo="$parent">
-              <AbsPoint x="0" y="0" />
+              <AbsPoint x="0" y="-7" />
             </Anchor>
           </Anchors>
           <Size>
@@ -19,6 +19,30 @@
     </Window>
 
     <Window name="LTT_Test" movable="false" layer="background" handleinput="false" parent="root">
+    </Window>
+
+    <Window name="LTT_Target" movable="true" layer="popup" handleinput="true" parent="root">
+      <Anchors>
+        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+          <AbsPoint x="0" y="0" />
+        </Anchor>
+      </Anchors>
+      <Size>
+        <AbsPoint x="3" y="3" />
+      </Size>
+      <Windows>
+        <DynamicImage name="$ParentBG" texture="EA_TintableImage" movable="false" sticky="false" layer="popup" handleinput="false" parent="$parent">
+          <TintColor r="255" g="0" b="0" />
+          <Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+              <AbsPoint x="0" y="0" />
+            </Anchor>
+          </Anchors>
+          <Size>
+            <AbsPoint x="3" y="3" />
+          </Size>
+        </DynamicImage>
+      </Windows>
     </Window>
 
   </Windows>
