@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Interface>
+
+  <Assets>
+    <Texture name="LTT_Texture_Line" file="Textures\LineOut.tga" />
+  </Assets>
+
+</Interface>
