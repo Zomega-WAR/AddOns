@@ -118,8 +118,9 @@ function LTT_OnUpdate (time_delta_seconds)
   -- Fix the mid point after this calculations to adjust for the rotation. This
   -- is needed as DynamicImageSetRotation doesn't correctly account for the
   -- height of the window. Height is 14, so we have to adjust by half (7).
-  local fixed_mid_x = mid_x - (dir_y * 7)
-  local fixed_mid_y = mid_y + (dir_x * 7)
+  -- **Fix from Sulle** need to modify the half-size by scale_xy.
+  local fixed_mid_x = mid_x - (dir_y * (7 / scale_xy))
+  local fixed_mid_y = mid_y + (dir_x * (7 / scale_xy))
 
   -- Now the rotation is done, move the mid-point of the line window. Needs to
   -- be scaled as WindowAddAnchor also modifies the inputs based on UI scale
