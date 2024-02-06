@@ -1,0 +1,44 @@
+<Interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Windows>
+
+    <Window name="AutoMark_Tester" handleinput="false" layer="background" movable="false" parent="Root" sticky="false">
+    </Window>
+
+    <Window name="T_AutoMark_Marker" handleinput="false" layer="background">
+      <Anchors>
+        <Anchor point="center" relativePoint="center" relativeTo="$parent">
+          <AbsPoint x="0" y="0" />
+        </Anchor>
+      </Anchors>
+      <Size>
+        <AbsPoint x="32" y="32" />
+      </Size>
+      <Windows>
+        <DynamicImage name="$parent_Border" texture="AutoMark_Circle" layer="background" handleinput="false">
+          <Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+              <AbsPoint x="0" y="30" />
+            </Anchor>
+          </Anchors>
+          <Size>
+            <AbsPoint x="33" y="32" />
+          </Size>
+          <TexDims y="64" x="64"/>
+          <TintColor r="255" g="0" b="0" />
+        </DynamicImage>
+        <DynamicImage name="$parent_Icon" layer="background" handleinput="false">
+          <Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="$parent">
+              <AbsPoint x="0" y="30" />
+            </Anchor>
+          </Anchors>
+          <Size>
+            <AbsPoint x="26" y="26" />
+          </Size>
+          <TexDims y="32" x="32"/>
+        </DynamicImage>
+      </Windows>
+    </Window>
+
+  </Windows>
+</Interface>
