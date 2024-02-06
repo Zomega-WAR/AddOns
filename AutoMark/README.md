@@ -1,4 +1,4 @@
-# AutoMark
+# AutoMark v1.0
 
 This is a recreation of an add-on I made for my guild back in Spring 2020. I forgot it existed and I have lost the code for it. This new version is far more robust with regard to how it detects players that are no longer present. The old add-on was called "Radar" and if you're one of the few who has a copy and still uses it, delete it and replace it with this instead.
 
