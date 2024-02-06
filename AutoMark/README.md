@@ -10,6 +10,6 @@ I don't plan on updating this add-on with new features but I will look into any 
 
 `/automark clear` will clear all current markers
 
-`/automark off` will disable the tracking of new enemy player targets but will keep existing marks in place. Use with `/automark clear` to completely disable everything.
+`/automark off` will disable the tracking of new enemy player targets but will keep existing marks in place. Use with `/automark clear` to completely stop everything.
 
-`/automark on` will enable the tracking of new enemy player targets. Existing markers are unaffected.
+`/automark on` will enable the tracking of new enemy player targets. Existing markers are unaffected. The add-on is on by default.
