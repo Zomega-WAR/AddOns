@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Interface>
+
+  <Windows>
+
+    <Label name="T_OverheadFonts_OtherLabel" inherits="TooltipItemTitle">
+      <Size>
+        <AbsPoint x="180" y="40" />
+      </Size>
+      <Anchors>
+        <Anchor point="bottomleft" relativePoint="topleft" relativeTo="SWTabTargettingContentsScrollChildSettingsNamesFont">
+          <AbsPoint x="0" y="10" />
+        </Anchor>
+      </Anchors>
+      <Color r="255" g="255" b="255" a="255" />
+    </Label>
+    
+    <ComboBox name="T_OverheadFonts_OtherCombo" inherits="TooltipComboBox">
+      <Anchors>
+        <Anchor point="right" relativePoint="left" relativeTo="OverheadFonts_OtherLabel">
+          <AbsPoint x="10" y="0" />
+        </Anchor>
+      </Anchors>
+    </ComboBox>
+
+  </Windows>
+
+</Interface>
